@@ -20,7 +20,6 @@ services:
     ports:
       - "${ARCADE_PORT:-8990}:80"
     volumes:
-volumes:
       - ./frontend:/usr/share/nginx/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./roms:/usr/share/nginx/html/roms:ro
