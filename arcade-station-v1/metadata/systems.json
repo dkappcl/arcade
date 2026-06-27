@@ -1,0 +1,8 @@
+{
+  "arcade": "MAME / FinalBurn Neo",
+  "neogeo": "Neo Geo",
+  "nes": "Nintendo NES",
+  "snes": "Super Nintendo",
+  "sega": "Sega Genesis / Mega Drive",
+  "atari": "Atari 2600"
+}

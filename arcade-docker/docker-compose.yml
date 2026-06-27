@@ -1,0 +1,13 @@
+services:
+  arcade-web:
+    build: .
+    container_name: arcade-web
+    restart: unless-stopped
+    ports:
+      - "8990:8990"
+    volumes:
+      - ./roms:/data/roms:ro
+    environment:
+      - ARCADE_TITLE=Arcade Docker Retro
+      - ARCADE_ROMS_DIR=/data/roms
+      - ARCADE_PORT=8990

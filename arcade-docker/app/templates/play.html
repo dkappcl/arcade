@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ game.name }} - {{ title }}</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="play-body">
+  <header class="topbar">
+    <a href="/">← Volver</a>
+    <strong>{{ game.name }}</strong>
+    <span>{{ game.system }}</span>
+  </header>
+  <main class="emulator-wrap">
+    <div id="game"></div>
+  </main>
+  <script>
+    const game = {{ game_json | safe }};
+    window.EJS_player = '#game';
+    window.EJS_core = game.system;
+    window.EJS_gameName = game.name;
+    window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
+    window.EJS_gameUrl = game.url;
+    window.EJS_startOnLoaded = true;
+    window.EJS_backgroundImage = '/static/arcade-bg.svg';
+  </script>
+  <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+</body>
+</html>

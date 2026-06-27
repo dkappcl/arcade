@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>🕹️ {{ title }}</h1>
+    <p>Biblioteca retro portable con Docker. Web activa en puerto <strong>8990</strong>.</p>
+  </header>
+  <main class="container">
+    <section class="panel">
+      <h2>Juegos detectados: {{ total }}</h2>
+      {% if games %}
+      <input id="search" placeholder="Buscar juego..." autocomplete="off" />
+      <div class="grid" id="games">
+        {% for game in games %}
+        <article class="card" data-name="{{ game.name|lower }} {{ game.file|lower }}">
+          <div class="badge">{{ game.system }}</div>
+          <h3>{{ game.name }}</h3>
+          <p>{{ game.file }}</p>
+          <small>{{ game.size_mb }} MB</small>
+          <a class="button" href="/play/{{ game.id }}">Jugar</a>
+        </article>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="empty">
+        <h3>No hay ROMs cargadas todavía</h3>
+        <p>Copia tus ROMs legales en <code>roms/arcade/</code> y reinicia o refresca esta página.</p>
+        <pre>cp galaga.zip roms/arcade/
+docker compose restart</pre>
+      </div>
+      {% endif %}
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

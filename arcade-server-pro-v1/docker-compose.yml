@@ -1,0 +1,10 @@
+services:
+  arcade:
+    image: nginx:alpine
+    container_name: arcade-pro
+    restart: unless-stopped
+    ports:
+      - "8990:80"
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
+      - ./roms:/usr/share/nginx/html/roms:ro

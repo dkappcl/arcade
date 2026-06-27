@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+roms/**/*.zip
+roms/**/*.7z
+roms/**/*.nes
+roms/**/*.sfc
+roms/**/*.smc
+roms/**/*.bin
+roms/**/*.rom
+roms/**/*.chd

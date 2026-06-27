@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Arcade Station</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>🕹️ Arcade Station</h1>
+      <p>Centro arcade Docker para ROMs legales</p>
+    </div>
+    <div class="status" id="status">API...</div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Tu estación arcade portable</h2>
+      <p>Levanta en CentOS 9, copia tus ROMs legales y administra todo desde la web en el puerto 8990.</p>
+    </div>
+    <div class="counter">
+      <strong id="gameCount">0</strong>
+      <span>juegos detectados</span>
+    </div>
+  </section>
+
+  <main class="layout">
+    <aside>
+      <h3>Sistemas</h3>
+      <button class="system active" data-system="all">Todos</button>
+      <button class="system" data-system="arcade">Arcade / MAME</button>
+      <button class="system" data-system="neogeo">Neo Geo</button>
+      <button class="system" data-system="nes">NES</button>
+      <button class="system" data-system="snes">SNES</button>
+      <button class="system" data-system="sega">Sega</button>
+      <button class="system" data-system="atari">Atari</button>
+
+      <hr>
+
+      <h3>Subir ROM legal</h3>
+      <form id="uploadForm">
+        <select id="uploadSystem">
+          <option value="arcade">Arcade</option>
+          <option value="neogeo">Neo Geo</option>
+          <option value="nes">NES</option>
+          <option value="snes">SNES</option>
+          <option value="sega">Sega</option>
+          <option value="atari">Atari</option>
+        </select>
+        <input id="romFile" type="file">
+        <button type="submit">Subir</button>
+      </form>
+      <small>No se incluyen ROMs. Usa solo archivos con derecho de uso.</small>
+    </aside>
+
+    <section class="content">
+      <div class="toolbar">
+        <input id="search" placeholder="Buscar juego...">
+        <button id="refresh">Actualizar</button>
+      </div>
+
+      <div id="games" class="grid"></div>
+
+      <div class="panel">
+        <h3>Emulador web</h3>
+        <p>Esta versión deja el catálogo y administración preparados. Para jugar directamente desde navegador se integrará EmulatorJS/RetroArch Web en la versión v2.</p>
+        <p>Los archivos quedan disponibles desde <code>/roms/&lt;sistema&gt;/archivo</code>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Arcade Station v1 · Docker · CentOS 9 · Puerto 8990
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
