@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Arcade Station v2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div><h1>🕹️ Arcade Station v2</h1><p>Consola arcade Docker · Web · CentOS 9 · Puerto 8990</p></div>
+  <div class="status" id="status">API...</div>
+</header>
+<section class="hero">
+  <div><h2>Catálogo + Emulador Web</h2><p>Sube ROMs legales, navega por sistema y ejecuta juegos desde el navegador.</p></div>
+  <div class="counter"><strong id="gameCount">0</strong><span>juegos</span></div>
+</section>
+<main class="layout">
+  <aside class="sidebar">
+    <h3>Sistemas</h3><div id="systems"></div><hr>
+    <h3>Subir ROM legal</h3>
+    <form id="uploadForm"><select id="uploadSystem"></select><input id="romFile" type="file"><button type="submit">Subir ROM</button></form><hr>
+    <h3>Carátula</h3>
+    <form id="coverForm"><select id="coverSystem"></select><input id="coverRom" placeholder="archivo ROM exacto, ej: galaga.zip"><input id="coverFile" type="file" accept=".png,.jpg,.jpeg,.webp"><button type="submit">Subir carátula</button></form>
+    <small>El paquete no incluye ROMs, BIOS ni juegos comerciales.</small>
+  </aside>
+  <section class="content">
+    <div class="toolbar"><input id="search" placeholder="Buscar juego, archivo o sistema..."><button id="refresh">Actualizar</button></div>
+    <div id="games" class="grid"></div>
+  </section>
+</main>
+<footer>Arcade Station v2 · Listado automático · Upload ROM · Player Web preparado · Sin ROMs incluidas</footer>
+<script src="app.js"></script>
+</body>
+</html>

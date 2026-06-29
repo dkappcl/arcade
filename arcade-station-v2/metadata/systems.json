@@ -1,0 +1,38 @@
+{
+  "arcade": {
+    "label": "Arcade / MAME",
+    "core": "arcade"
+  },
+  "neogeo": {
+    "label": "Neo Geo",
+    "core": "arcade"
+  },
+  "nes": {
+    "label": "NES",
+    "core": "nes"
+  },
+  "snes": {
+    "label": "SNES",
+    "core": "snes"
+  },
+  "sega": {
+    "label": "Sega Genesis / Mega Drive",
+    "core": "segaMD"
+  },
+  "atari": {
+    "label": "Atari 2600",
+    "core": "atari2600"
+  },
+  "gb": {
+    "label": "Game Boy",
+    "core": "gb"
+  },
+  "gbc": {
+    "label": "Game Boy Color",
+    "core": "gb"
+  },
+  "gba": {
+    "label": "Game Boy Advance",
+    "core": "gba"
+  }
+}
