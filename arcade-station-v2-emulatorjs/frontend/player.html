@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Jugar · Arcade Station</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body{margin:0;width:100%;height:100%;background:#05050a;color:white;font-family:Arial}
+.top{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:#111129;border-bottom:1px solid #333}
+.top a{color:#fff;text-decoration:none;background:#2d236e;padding:9px 12px;border-radius:8px}
+#game{width:100%;height:calc(100vh - 54px)}
+.msg{padding:24px}
+</style>
+</head>
+<body>
+<div class="top"><div id="title">Cargando juego...</div><a href="/">← Volver</a></div>
+<div id="game"></div>
+<script>
+const params = new URLSearchParams(location.search);
+const system = params.get("system");
+const file = params.get("file");
+const coreMap = {nes:"nes",snes:"snes",sega:"segaMD",atari:"atari2600",gba:"gba",gb:"gb",gbc:"gb",arcade:"arcade",neogeo:"arcade"};
+if (!system || !file) {
+  document.body.innerHTML = "<div class='msg'>Falta system o file.</div>";
+} else {
+  const gameUrl = `/roms/${encodeURIComponent(system)}/${encodeURIComponent(file)}`;
+  document.getElementById("title").textContent = `Jugando: ${file}`;
+  window.EJS_player = "#game";
+  window.EJS_core = coreMap[system] || system;
+  window.EJS_gameUrl = gameUrl;
+  window.EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
+  window.EJS_startOnLoaded = true;
+  window.EJS_fullscreenOnLoaded = false;
+  window.EJS_language = "es-ES";
+}
+</script>
+<script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+</body>
+</html>

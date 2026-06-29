@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Arcade Station v2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div><h1>🕹️ Arcade Station v2</h1><p>Sube ROMs legales y juega desde el navegador</p></div><div class="status" id="status">API...</div></header>
+<section class="hero"><div><h2>Consola retro web portable</h2><p>Incluye botón <b>Jugar</b> con EmulatorJS. NES, SNES, Sega, Atari, Game Boy y GBA funcionan mejor. Arcade/MAME depende del set y BIOS.</p></div><div class="counter"><strong id="gameCount">0</strong><span>juegos detectados</span></div></section>
+<main class="layout">
+<aside>
+<h3>Sistemas</h3>
+<button class="system active" data-system="all">Todos</button>
+<button class="system" data-system="nes">NES</button>
+<button class="system" data-system="snes">SNES</button>
+<button class="system" data-system="sega">Sega</button>
+<button class="system" data-system="gba">Game Boy Advance</button>
+<button class="system" data-system="gb">Game Boy</button>
+<button class="system" data-system="gbc">Game Boy Color</button>
+<button class="system" data-system="atari">Atari</button>
+<button class="system" data-system="arcade">Arcade / MAME</button>
+<button class="system" data-system="neogeo">Neo Geo</button>
+<hr>
+<h3>Subir ROM legal</h3>
+<form id="uploadForm">
+<select id="uploadSystem">
+<option value="nes">NES</option><option value="snes">SNES</option><option value="sega">Sega Genesis / Mega Drive</option><option value="gba">Game Boy Advance</option><option value="gb">Game Boy</option><option value="gbc">Game Boy Color</option><option value="atari">Atari 2600</option><option value="arcade">Arcade / MAME</option><option value="neogeo">Neo Geo</option>
+</select>
+<input id="romFile" type="file">
+<button type="submit">Subir</button>
+</form>
+<small>Usa solo ROMs/BIOS con derecho de uso. No se incluyen juegos.</small>
+</aside>
+<section class="content">
+<div class="toolbar"><input id="search" placeholder="Buscar juego..."><button id="refresh">Actualizar</button></div>
+<div id="games" class="grid"></div>
+<div class="panel"><h3>Notas</h3><p>Para NES usa <code>.nes</code>. Para SNES usa <code>.sfc</code> o <code>.smc</code>. Para Sega usa <code>.gen</code> o <code>.md</code>. MAME/Neo Geo puede requerir ZIP correcto y BIOS.</p></div>
+</section>
+</main>
+<footer>Arcade Station v2 · EmulatorJS · Docker · CentOS 9 · Puerto 8990</footer>
+<script src="app.js"></script>
+</body>
+</html>

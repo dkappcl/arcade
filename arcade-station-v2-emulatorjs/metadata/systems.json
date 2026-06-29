@@ -1,0 +1,11 @@
+{
+  "arcade": "MAME / FinalBurn Neo - experimental en navegador",
+  "neogeo": "Neo Geo - requiere BIOS según ROM",
+  "nes": "Nintendo NES",
+  "snes": "Super Nintendo",
+  "sega": "Sega Genesis / Mega Drive",
+  "atari": "Atari 2600",
+  "gba": "Game Boy Advance",
+  "gb": "Game Boy",
+  "gbc": "Game Boy Color"
+}
